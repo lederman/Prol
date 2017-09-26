@@ -16,6 +16,10 @@ Currently, only a MATLAB implementation is available. We plan to add a more comp
 
 The numerical methods are described in a paper which is available, along with the associated LaTeX code in the /doc folder of this project. The report is also available on arXiv (TBA).
 
+The code which reproduces the figures in the report is available in the /doc/figures folder
+
+# "Open Source Proof"
+
 To make the analytical expressions more convenient for analytical verification by the readers, we provide experimental Mathematica code that confirms some of the analytical relations which have been obtained in other ways. Where we have not been able to use Mathematica to verify the most general form of the relations that we have derived, we demonstrate some results with specific choice of parameters, which the user can change easily. Furthermore, where possible, we generate the expression in the paper, and some limited pieces of the code, directly from the relations that are verified in the Mathematica code to reduce the possibility of typos and incompatible notation. 
 Ultimately, the goal of this experiment is to develop methodology that would allow to confirm key results in papers using both an analytical computational tool and a numerical computational tool, and to verify the compatibility between the expressions. 
 
