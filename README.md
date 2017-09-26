@@ -9,7 +9,7 @@ Code License: GNU General Public License v3.0 (see LICENSE file).
 
 # Project Status
 **This code is under development** and it is still being tested. 
-The current version to not implement the classic one-dimensional Prolate Spheroidal Wave Functions (PSWF), which we plan to add in the future.
+The current version does not implement the classic one-dimensional Prolate Spheroidal Wave Functions (PSWF), which we plan to add in the future.
 Currently, only a MATLAB implementation is available. We plan to add a more comprehensive implementation in FORTRAN, and interfaces for Julia and Python. 
 
 # Documentation
@@ -24,6 +24,7 @@ To make the analytical expressions more convenient for analytical verification b
 Ultimately, the goal of this experiment is to develop methodology that would allow to confirm key results in papers using both an analytical computational tool and a numerical computational tool, and to verify the compatibility between the expressions. 
 
 # Caveats
+
 * The classic 1-D Prolate Spheroidal Wave Functions (PSWF) have not been implemented in this code yet. 
 * The code is still under development, and has not been stress-tested yet. 
 * For technical reasons, accuracy testing will only be available with the FORTRAN implementation. 
