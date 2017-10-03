@@ -28,7 +28,7 @@ Ultimately, the goal of this experiment is to develop methodology that would all
 * The classic 1-D Prolate Spheroidal Wave Functions (PSWF) have not been implemented in this code yet. 
 * The code is still under development, and has not been stress-tested yet. 
 * For technical reasons, accuracy testing will only be available with the FORTRAN implementation. 
-* The MATLAB implementation relies on the eigenvector decomposition in MATLAB which poses several potential problems in scaling and porting to other languages and other versions of MATLAB. If you attempt to port the code and encounter any loss of precision, please note the comments in that part of the code. This dependency will be removed in future versions.
+* To make the code more readable, the preliminary MATLAB implementation relies on the eigenvector decomposition in MATLAB which poses several potential problems in scaling and porting to other languages and other versions of MATLAB. There are several obvious downsides to using the standard eig, but there are more subtle considerations discussed in "eig notes" in the documentation folder. If you attempt to port the code and encounter any loss of precision, please note the comments in that part of the code and the notes in the documentation folder. This dependency will be removed in future versions.
 
 # Contributing to this Project
 
