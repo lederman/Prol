@@ -31,7 +31,7 @@
 
 \hypersetup{pdfauthor={Roy R. Lederman},pdftitle={Generalized Prolate Spheroidal Functions}}
 
-\title{Numerical Computation of Generalized Prolate Spheroidal Functions - the Essentials}
+\title{Numerical Algorithms for the Computation of Generalized Prolate Spheroidal Functions}
 \date{\today}
 \author{Roy R. Lederman\\ \small The Program in Applied and Computational Mathematics\\ \small Princeton University}
 
@@ -43,19 +43,19 @@
 %
 %
 \begin{abstract}
-  Generalized Prolate Spheroidal Functions (GPSF) are the eigenfunctions of the truncated Fourier transform, restricted to D-dimensional balls in the spatial domain and frequency domain. Despite their useful properties in many applications, GPSFs are often replaced by crude approximations due to a lack of available resources on their efficient and accurate computation.
-  The purpose of this paper is to discuss the essential elements of computing GPSFs and associated eigenvalues.
+  Generalized Prolate Spheroidal Functions (GPSF) are the eigenfunctions of the truncated Fourier transform, restricted to D-dimensional balls in the spatial domain and frequency domain. Despite their useful properties in many applications, GPSFs are often replaced by crude approximations. 
+  The purpose of this paper is to review the elements of computing GPSFs and associated eigenvalues.
   This paper is accompanied by open-source code.   
   \end{abstract}
 {\bf Keywords:} Generalized Prolate Spheroidal Functions, GPSF, PSWF, Truncated Fourier Transform, Implementation.
 
 
 %
-% draft note for in-development editions.
+% draft note for in-development versions.
 %
-\begin{center}
-{\Huge *** DRAFT ***}
-\end{center}
+%\begin{center}
+%{\Huge *** DRAFT ***}
+%\end{center}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -91,12 +91,12 @@ The eigenfunctions of this operator are the GPSFs.
 PSWFs have been useful in many applications in signal processing. Among their many useful properties, they are the optimal basis for representing functions whose energy is as concentrated as possible in the interval $[-1,1]$ in the spatial domain, and in the interval $[-c,c]$ in the frequency domain. 
 GPSFs are known to be useful in many applications in signal processing and optics, however they have gained a reputation of being prohibitively difficult to compute, and in practice they are often replaced by crude approximations. 
 
-The properties of GPSFs have been studies by Slepian in \cite{slepian1964prolate}. Many of the properties of the two-dimensional GPSFs, have been studies in \cite{shkolnisky2007prolate,shkolnisky2006approximation}.
+The properties of GPSFs have been studied by Slepian in \cite{slepian1964prolate}. Many of the properties of the two-dimensional GPSFs, have been studied in \cite{shkolnisky2007prolate,shkolnisky2006approximation}.
 Recently, the more general GPSFs have been studied in \cite{serkh2015generalized}, and they are being studied in the upcoming \cite{greengard2017generalized}.
-However, we are not aware of a complete publicly available resource or code for efficient and accurate computation of GPSFs and their associated eigenvalues.
+However, we are not aware of a complete publicly available resource and code for efficient and accurate computation of GPSFs and their associated eigenvalues.
 
 The purpose of this paper is to review the essential results for computing GPSFs, and to introduce numerical code for computing GPSFs.
-We review results primarily from \cite{slepian1964prolate,shkolnisky2007prolate,serkh2015generalized}, with some reformulation and generalization, as well as some unpublished results which Philip Greengard and Kirill Serkh have generously shared with us from their upcoming \cite{greengard2017generalized}, and introduce additional  results. 
+We review results primarily from \cite{slepian1964prolate,shkolnisky2007prolate} and \cite{serkh2015generalized}, with some reformulation and generalization, as well as some unpublished results which Philip Greengard and Kirill Serkh have been generous to share with us from their upcoming \cite{greengard2017generalized}, and introduce additional  results. 
 
 
 The immediate motivation for this paper is the use of three-dimensional GPSFs for representing objects that are highly concentrated in both the spatial and frequency domains in cryo-electron microscopy (cryo-EM) applications (e.g. \cite{lederman2016representation,lederman2017continuously}). 
@@ -267,7 +267,7 @@ In this section we presents properties of integrals on the surface of spheres, t
 in this paper. A comprehensive discussion of these properties can be found, inter alia, in \cite{slepian1964prolate,serkh2015generalized}.
 
 Let $S_N^m({\bm \xi})$ be the complete set of orthonormal surface harmonics of degree $N=0,1,2,\ldots$, with ${\bm \xi}$ a unit vectors in $D$ dimensions. 
-For a hype-sphere in $D=p+2$ dimensions, there are $h(N,p)$ orthonormal functions in the set, where
+For a hyper-sphere in $D=p+2$ dimensions, there are $h(N,p)$ orthonormal functions in the set, where
 \begin{equation}\label{eq:def:hnp}
 h(N,p) = (2N+p)\frac{(N+p-1)}{p! N!}
 \end{equation}
@@ -539,7 +539,7 @@ The following formula, due to \cite{serkh2015generalized,greengard2017generalize
 \subsection{Relation between Eigenvalues and Expansion Coefficients}
 
 The purpose of this section is to present a relation between the eigenvalues $\gamma_{N,n}$, defined in (\ref{eq:gamma}), and the elements ${h}^{p,c,N,n}_k$, defined in (\ref{eq:weighted_prol_expand}). 
-A more detailed discussion of the relation appears in \cite{slepian1964prolate,serkh2015generalized,greengard2017generalized}.
+This property is discussed in \cite{slepian1964prolate,serkh2015generalized,greengard2017generalized}.
 
 
 Substituting (\ref{eq:weighted_prol_expand}) into (\ref{eq:weighted_radial_prol:eig}) yields
@@ -639,7 +639,7 @@ However, $g({\bm \omega})$ cannot be identically zero on the outside due to clas
  \| g-g_c \|_2^2 = 1-|\nu_{N,n}|^2.
 \end{equation}
 It follows that the first few GPSFs, with eigenvalues very close to $1$, are highly concentrated in both the spatial domain 
-and the frequency domain. With a small abuse of terminology, we say that these functions are {\em numerically} compactly supported in both the spatial and frequency domains. Subsequent GPSFs with smaller eigenvalues have most of their energy concentrated outside the band $c$. In this sense, the first few GPSFs, with eigenvalues close to $1$, and a rather sharp threshold afterwhich the eigenvalues become very small, are the optimal basis for representing functions that are highly concentrated in both the spatial and frequency domains. 
+and the frequency domain. With a small abuse of terminology, we say that these functions are {\em numerically} compactly supported in both the spatial and frequency domains. Subsequent GPSFs with smaller eigenvalues have most of their energy concentrated outside the band $c$. In this sense, the first few GPSFs, with eigenvalues close to $1$, and a rather sharp threshold after which the eigenvalues become very small, are the optimal basis for representing functions that are highly concentrated in both the spatial and frequency domains. 
 
 
 
@@ -736,7 +736,7 @@ The code for reproducing these plots is available at \url{http://github.com/lede
 For the sake of simplicity, the current MATLAB\textsuperscript{TM} implementation makes use of MATLAB's ``eig'' eigendecomposition.
 This subroutine retains relative precision only in certain elements, but not in all elements, as discussed in Remark \ref{remark:eig_alg}.
 The truncation is corrected for certain computations using an inverse power method step on the first eigenvector. 
-For this reason and other reasons, future implementations will replace eigendecomposition procedure. 
+For this reason and other reasons, future implementations will replace the eigendecomposition procedure. 
 \end{remark}
 
 
