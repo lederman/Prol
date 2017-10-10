@@ -35,11 +35,10 @@ Ultimately, the goal of this experiment is to develop methodology that would all
 We welcome contributions to the code and theoretical background.
 The latex source of the report is available in this repository.
 
-# Citation:
+# Citation
 Please cite: Roy R. Lederman.  [Numerical Algorithms for the Computation of Generalized Prolate Spheroidal Functions](https://arxiv.org/abs/1710.02874) (2017) arXiv:1710.02874
 
 
-# Additional resources:
-
+# Additional resources
 * Slepian, David. "Prolate spheroidal wave functions, Fourier analysis and uncertainty—IV: extensions to many dimensions; generalized prolate spheroidal functions." Bell Labs Technical Journal 43.6 (1964): 3009-3057.
 * Serkh, Kirill. On generalized prolate spheroidal functions. Technical Report TR-1519, Department of Mathematics, Yale University, 2015.
