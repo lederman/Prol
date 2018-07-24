@@ -7,6 +7,9 @@ A secondary goal of this project is to develop methodology for cross-validation 
 
 Code License: GNU General Public License v3.0 (see LICENSE file).
 
+**For the 1-D version**, see: [Prol 1-D](http://github.com/lederman/Prol_1D) 
+
+
 # Project Status
 **This code is under development** and it is still being tested. 
 The current version does not implement the classic one-dimensional Prolate Spheroidal Wave Functions (PSWF), which we plan to add in the future.
