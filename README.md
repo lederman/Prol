@@ -1,13 +1,14 @@
 # PROL
 **Code for Computing Generalized Prolate Spheroidal Functions (GPSF)**
 
+**For the 1-D version**, see: [Prol 1-D](http://github.com/lederman/Prol_1D) 
+
+
 The numerical methods for this code are described in: [Numerical Algorithms for the Computation of Generalized Prolate Spheroidal Functions](https://arxiv.org/abs/1710.02874) (the latex source is available and is being updated at in the /doc folder).
 
 A secondary goal of this project is to develop methodology for cross-validation of key results using both analytical computational validating (here, using Mathematica) and numerical validation.
 
 Code License: GNU General Public License v3.0 (see LICENSE file).
-
-**For the 1-D version**, see: [Prol 1-D](http://github.com/lederman/Prol_1D) 
 
 
 # Project Status
